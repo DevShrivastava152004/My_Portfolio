@@ -11,7 +11,10 @@
       rel="stylesheet"
     />
     <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -104,13 +107,18 @@
       }
 
       .hero-social-btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
         transition: left 0.5s ease;
       }
 
@@ -159,7 +167,7 @@
           justify-content: flex-start;
           gap: 15px;
         }
-        
+
         .hero-social-btn {
           padding: 10px 20px;
           font-size: 0.9rem;
@@ -172,7 +180,7 @@
           align-items: flex-start;
           gap: 12px;
         }
-        
+
         .hero-social-btn {
           width: auto;
           min-width: 160px;
@@ -199,16 +207,17 @@
         object-fit: cover;
         object-position: center;
         border: 5px solid rgba(155, 77, 228, 0.6);
-        box-shadow: 
-          0 25px 50px rgba(0, 0, 0, 0.4),
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
           0 15px 30px rgba(155, 77, 228, 0.3),
           0 8px 16px rgba(126, 126, 222, 0.2),
           inset 0 0 0 3px rgba(255, 255, 255, 0.15);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        background: radial-gradient(circle at center, 
-          rgba(155, 77, 228, 0.15) 0%, 
-          rgba(126, 126, 222, 0.1) 50%, 
-          rgba(0, 0, 33, 0.05) 100%);
+        background: radial-gradient(
+          circle at center,
+          rgba(155, 77, 228, 0.15) 0%,
+          rgba(126, 126, 222, 0.1) 50%,
+          rgba(0, 0, 33, 0.05) 100%
+        );
         position: relative;
         z-index: 2;
       }
@@ -216,8 +225,7 @@
       .rightSection img:hover {
         transform: translateY(-8px) scale(1.05);
         border-color: rgba(155, 77, 228, 0.8);
-        box-shadow: 
-          0 35px 70px rgba(0, 0, 0, 0.5),
+        box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5),
           0 20px 40px rgba(155, 77, 228, 0.4),
           0 10px 20px rgba(126, 126, 222, 0.3),
           inset 0 0 0 3px rgba(255, 255, 255, 0.25);
@@ -225,7 +233,7 @@
 
       /* Decorative ring animation */
       .profile-photo-container::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -15px;
         left: -15px;
@@ -233,11 +241,14 @@
         bottom: -15px;
         border-radius: 50%;
         border: 3px solid transparent;
-        background: linear-gradient(45deg, 
-          rgba(155, 77, 228, 0.8), 
-          rgba(126, 126, 222, 0.6), 
-          rgba(155, 77, 228, 0.4),
-          rgba(126, 126, 222, 0.8)) border-box;
+        background: linear-gradient(
+            45deg,
+            rgba(155, 77, 228, 0.8),
+            rgba(126, 126, 222, 0.6),
+            rgba(155, 77, 228, 0.4),
+            rgba(126, 126, 222, 0.8)
+          )
+          border-box;
         mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
         mask-composite: xor;
         animation: rotate 6s linear infinite;
@@ -252,17 +263,19 @@
 
       /* Additional glow effect */
       .profile-photo-container::after {
-        content: '';
+        content: "";
         position: absolute;
         top: -20px;
         left: -20px;
         right: -20px;
         bottom: -20px;
         border-radius: 50%;
-        background: radial-gradient(circle at center, 
-          rgba(155, 77, 228, 0.3) 0%, 
-          rgba(126, 126, 222, 0.2) 30%, 
-          transparent 70%);
+        background: radial-gradient(
+          circle at center,
+          rgba(155, 77, 228, 0.3) 0%,
+          rgba(126, 126, 222, 0.2) 30%,
+          transparent 70%
+        );
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 0;
@@ -274,7 +287,8 @@
       }
 
       @keyframes pulse {
-        0%, 100% {
+        0%,
+        100% {
           transform: scale(1);
           opacity: 0.3;
         }
@@ -334,7 +348,7 @@
         top: 75px;
         width: 150px;
       }
-      .vertical-desc { 
+      .vertical-desc {
         position: relative;
         top: 86px;
         width: 150px;
@@ -368,7 +382,11 @@
 
       .footer-brand h2 {
         font-size: 2.5rem;
-        background: linear-gradient(45deg, rgb(155, 77, 228), rgb(126, 126, 222));
+        background: linear-gradient(
+          45deg,
+          rgb(155, 77, 228),
+          rgb(126, 126, 222)
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -509,16 +527,16 @@
           text-align: center;
           gap: 30px;
         }
-        
+
         .footer-brand {
           text-align: center;
         }
-        
+
         .social-buttons {
           justify-content: center;
           flex-wrap: wrap;
         }
-        
+
         .social-btn {
           flex: 1;
           min-width: 130px;
@@ -540,7 +558,7 @@
           flex-direction: column;
           align-items: center;
         }
-        
+
         .social-btn {
           width: 200px;
         }
@@ -568,14 +586,24 @@
           Hi, My name is <span class="purple">Dev Shrivastava</span>
           <div>And I am a passionate</div>
           <span id="element"></span>
-          
+
           <!-- Hero Section Social Buttons -->
           <div class="hero-social-buttons">
-            <a href="https://github.com/DevShrivastava152004" class="hero-social-btn github" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/DevShrivastava152004"
+              class="hero-social-btn github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i class="fab fa-github"></i>
               GitHub
             </a>
-            <a href="www.linkedin.com/in/dev-shrivastava-8884b2249" class="hero-social-btn linkedin" target="_blank" rel="noopener noreferrer">
+            <a
+              href="www.linkedin.com/in/dev-shrivastava-8884b2249"
+              class="hero-social-btn linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i class="fab fa-linkedin-in"></i>
               LinkedIn
             </a>
@@ -593,44 +621,34 @@
         <h1>Work Experience</h1>
         <div class="box">
           <div class="vertical">
-            <img class="image-top" src="developer.png" class="experience-icon" alt="Tool Name" />
-            <div class="vertical-title">HTML Developer<br />(2010-2012)</div>
+            <img
+              class="image-top"
+              src="developer.png"
+              class="experience-icon"
+              alt="Tool Name"
+            />
+            <div class="vertical-title">EV Connect<br /></div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Built a map-based EV station locator using Leaflet.js with
+              real-time user location, route tracking, and smart UI. Designed
+              for EV users to easily discover and navigate to charging stations.
             </div>
           </div>
           <div class="vertical">
-            <img class="image-top" src="css.png" alt="" />
-            <div class="vertical-title">CSS Developer<br />(2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <img class="image-top" src = "developer.png"" />
+            <div class="vertical-title">
+              Personal Portfolio<br />
             </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="javascript.png" alt="" />
-            <div class="vertical-title">JavaScript Developer<br />(2010-2012)</div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="NodeJS.png" alt="" />
-            <div class="vertical-title">Node.js Developer<br />(2012-2014)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="developer.png" alt="" />
-            <div class="vertical-title">Full Stack Developer<br />(2014-Present)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Created a modern developer portfolio website with smooth UI,
+              project showcase, and integrated links to GitHub, LinkedIn, and
+              resume. Designed to reflect my skills and personal brand.
             </div>
           </div>
         </div>
       </section>
     </main>
-    
+
     <!-- Updated Footer with Social Buttons -->
     <footer>
       <div class="footer-container">
@@ -638,10 +656,12 @@
           <!-- Brand Section with Social Buttons -->
           <div class="footer-brand">
             <h2>Dev Shrivastava</h2>
-            <p>Transforming into a Frontend + ML Developer.<br>
-            Follow my 100-day journey of growth and building amazing projects.</p>
+            <p>
+              Transforming into a Frontend + ML Developer.<br />
+              Follow my 100-day journey of growth and building amazing projects.
+            </p>
           </div>
-          
+
           <!-- Navigation Links -->
           <div class="footer-nav">
             <h4>Quick Links</h4>
@@ -652,40 +672,49 @@
               <li><a href="/">Contact</a></li>
             </ul>
           </div>
-          
+
           <!-- Journey Info -->
-          
         </div>
-        
+
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <p>&copy; 2025 Dev's Portfolio. Building in public, learning in the open. 🚀</p>
+          <p>
+            &copy; 2025 Dev's Portfolio. Building in public, learning in the
+            open. 🚀
+          </p>
         </div>
       </div>
     </footer>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-      var typed = new Typed('#element', {
-        strings: ['Frontend Developer', 'ML Engineer', 'AI Developer', 'Problem Solver'],
+      var typed = new Typed("#element", {
+        strings: [
+          "Frontend Developer",
+          "ML Engineer",
+          "AI Developer",
+          "Problem Solver",
+        ],
         typeSpeed: 50,
         backSpeed: 30,
         backDelay: 2000,
-        loop: true
+        loop: true,
       });
 
       // Hero and Footer social button interactions
-      document.querySelectorAll('.social-btn, .hero-social-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          // Add a subtle pulse effect
-          this.style.transform = 'scale(0.95)';
-          setTimeout(() => {
-            this.style.transform = '';
-          }, 150);
-          
-          console.log(`Navigating to: ${this.textContent.trim()}`);
+      document
+        .querySelectorAll(".social-btn, .hero-social-btn")
+        .forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            // Add a subtle pulse effect
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "";
+            }, 150);
+
+            console.log(`Navigating to: ${this.textContent.trim()}`);
+          });
         });
-      });
     </script>
   </body>
 </html>
