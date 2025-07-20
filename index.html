@@ -10,10 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
       body {
         background-color: rgb(0, 0, 33);
@@ -64,7 +70,9 @@
       .firstSection {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         margin: 120px 0;
+        gap: 40px;
       }
       .firstSection > div {
         width: 35%;
@@ -73,9 +81,166 @@
         font-size: 3rem;
         margin: 30px 0;
       }
-      .rightSection img {
-        width: 80%;
+
+      /* Hero Section Social Buttons */
+      .hero-social-buttons {
+        display: flex;
+        gap: 20px;
+        margin-top: 25px;
+        align-items: center;
       }
+
+      .hero-social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-social-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .hero-social-btn:hover::before {
+        left: 100%;
+      }
+
+      .hero-social-btn.github {
+        background: rgba(36, 41, 47, 0.9);
+        color: white;
+        border-color: rgba(36, 41, 47, 0.3);
+      }
+
+      .hero-social-btn.github:hover {
+        background: rgba(36, 41, 47, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(36, 41, 47, 0.3);
+        border-color: rgba(36, 41, 47, 0.6);
+      }
+
+      .hero-social-btn.linkedin {
+        background: rgba(10, 102, 194, 0.9);
+        color: white;
+        border-color: rgba(10, 102, 194, 0.3);
+      }
+
+      .hero-social-btn.linkedin:hover {
+        background: rgba(10, 102, 194, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(10, 102, 194, 0.3);
+        border-color: rgba(10, 102, 194, 0.6);
+      }
+
+      .hero-social-btn i {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .hero-social-btn:hover i {
+        transform: scale(1.1);
+      }
+
+      /* Responsive design for hero buttons */
+      @media (max-width: 768px) {
+        .hero-social-buttons {
+          justify-content: flex-start;
+          gap: 15px;
+        }
+
+        .hero-social-btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-social-buttons {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        .hero-social-btn {
+          width: auto;
+          min-width: 160px;
+        }
+      }
+
+      /* Circular Profile Photo Styles */
+      .rightSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .profile-photo-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .rightSection img {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        border: 4px solid rgba(155, 77, 228, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+          0 8px 16px rgba(155, 77, 228, 0.2),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: linear-gradient(
+          135deg,
+          rgba(155, 77, 228, 0.1),
+          rgba(126, 126, 222, 0.1)
+        );
+      }
+
+      .rightSection img:hover {
+        transform: translateY(-5px) scale(1.02);
+        border-color: rgba(155, 77, 228, 0.6);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+          0 15px 30px rgba(155, 77, 228, 0.3),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+      }
+
+      /* Decorative ring animation */
+
+      .profile-photo-container:hover::before {
+        opacity: 1;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
       .purple {
         color: rgb(155, 77, 228);
       }
@@ -95,7 +260,7 @@
       }
       .secondSection .box {
         background: white;
-        width: 77 vw;
+        width: 77vw;
         height: 2px;
         margin: 56px 0;
         display: flex;
@@ -124,35 +289,213 @@
         font-size: 9px;
         color: gray;
       }
+
+      /* Updated Footer Styles */
       footer {
-        background-color: #0e0e1a;
-        height: 233px;
+        background: linear-gradient(135deg, #0e0e1a 0%, #1a1a2e 100%);
+        padding: 40px 0 20px 0;
+        border-top: 2px solid rgba(155, 77, 228, 0.3);
       }
-      .footer {
-        display: flex;
-        padding: 23px 122px;
-        justify-content: space-evenly;
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
       }
-      .footer ul {
-        list-style: none;
+
+      .footer-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 30px;
       }
-      .footer > div {
-        flex: 1;
-        min-width: 200px;
-        margin: 10px 0;
-      }
-      .portfolio-container {
-        position: relative;
-        left: -20px;
-      }
-      .title {
+
+      .footer-brand {
         text-align: left;
       }
+
+      .footer-brand h2 {
+        font-size: 2.5rem;
+        background: linear-gradient(
+          45deg,
+          rgb(155, 77, 228),
+          rgb(126, 126, 222)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 15px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+      }
+
+      .footer-brand p {
+        color: #a0a0a0;
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      /* Social Buttons Integration */
+      .social-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 2px solid transparent;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .social-btn.github {
+        background: rgba(36, 41, 47, 0.8);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .social-btn.github:hover {
+        background: rgba(36, 41, 47, 1);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(36, 41, 47, 0.4);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .social-btn.linkedin {
+        background: rgba(10, 102, 194, 0.8);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .social-btn.linkedin:hover {
+        background: rgba(10, 102, 194, 1);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(10, 102, 194, 0.4);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .social-btn i {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .social-btn:hover i {
+        transform: rotate(5deg) scale(1.1);
+      }
+
+      /* Footer Navigation */
+      .footer-nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-nav h4 {
+        color: rgb(155, 77, 228);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+
+      .footer-nav ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-nav ul li a {
+        color: #a0a0a0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-nav ul li a:hover {
+        color: rgb(126, 126, 222);
+      }
+
+      /* Footer Bottom */
       .footer-bottom {
         text-align: center;
-        color: gray;
-        margin-top: 20px;
-        font-size: 0.8rem;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .firstSection {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .firstSection > div {
+          width: 90%;
+        }
+
+        .leftSection {
+          font-size: 2.5rem;
+          order: 2;
+        }
+
+        .rightSection {
+          order: 1;
+        }
+
+        .rightSection img {
+          width: 220px;
+          height: 220px;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 30px;
+        }
+
+        .footer-brand {
+          text-align: center;
+        }
+
+        .social-buttons {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .social-btn {
+          flex: 1;
+          min-width: 130px;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .leftSection {
+          font-size: 2rem;
+        }
+
+        .rightSection img {
+          width: 180px;
+          height: 180px;
+        }
+
+        .social-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .social-btn {
+          width: 200px;
+        }
       }
     </style>
   </head>
@@ -174,12 +517,36 @@
     <main>
       <section class="firstSection">
         <div class="leftSection">
-          Hi, My name is <span class="purple">Dev</span>
+          Hi, My name is <span class="purple">Dev Shrivastava</span>
           <div>And I am a passionate</div>
           <span id="element"></span>
+
+          <!-- Hero Section Social Buttons -->
+          <div class="hero-social-buttons">
+            <a
+              href="https://github.com/DevShrivastava152004"
+              class="hero-social-btn github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i>
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dev-shrivastava-8884b2249?original_referer="
+              class="hero-social-btn linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin-in"></i>
+              LinkedIn
+            </a>
+          </div>
         </div>
         <div class="rightSection">
-          <img src="bg.webp" alt="" />
+          <div class="profile-photo-container">
+            <img src="bg.JPG" alt="Dev Shrivastava - Profile Photo" />
+          </div>
         </div>
       </section>
       <hr />
@@ -234,46 +601,73 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="flex"></div>
-      <div class="footer-first">
-        <h3>Dev's Developer Portfolio</h3>
-      </div>
-      <div class="footer-second">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-      <div class="footer-third">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-      <div class="footer-fourth">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
-        </ul>
+
+    <!-- Updated Footer with Social Buttons -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-main">
+          <!-- Brand Section with Social Buttons -->
+          <div class="footer-brand">
+            <h2>Dev Shrivastava</h2>
+            <p>
+              Transforming into a Frontend + ML Developer.<br />
+              Follow my 100-day journey of growth and building amazing projects.
+            </p>
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="footer-nav">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">About</a></li>
+              <li><a href="/">Projects</a></li>
+              <li><a href="/">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Journey Info -->
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Dev's Portfolio. Building in public, learning in the
+            open. 🚀
+          </p>
+        </div>
       </div>
     </footer>
-    <div class="footer-bottom">
-      © 2025 Dev Shrivastava. All rights reserved.
-    </div>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed("#element", {
-        strings: ["FrontEnd Developer", "UI/UX Designer", "Web Designer"],
+        strings: [
+          "Frontend Developer",
+          "ML Engineer",
+          "AI Developer",
+          "Problem Solver",
+        ],
         typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
       });
+
+      // Hero and Footer social button interactions
+      document
+        .querySelectorAll(".social-btn, .hero-social-btn")
+        .forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            // Add a subtle pulse effect
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "";
+            }, 150);
+
+            console.log(`Navigating to: ${this.textContent.trim()}`);
+          });
+        });
     </script>
   </body>
 </html>
